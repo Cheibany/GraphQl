@@ -1,55 +1,23 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
+const path = require('path');
 
-const hostname = '127.0.0.1';
-const port = 3000;
+const app = express();
+const PORT = process.env.PORT || 8080;
 
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    fs.readFile('index.html', 'utf8', (err, data) => {
-      if (err) {
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end(data);
-      }
-    });
-  } else if (req.url === '/login') {
-    fs.readFile('login.html', 'utf8', (err, data) => {
-      if (err) {
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end(data);
-      }
-    });
-  } else if (req.url === '/index.js') {
-    fs.readFile('index.js', 'utf8', (err, data) => {
-      if (err) {
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        res.writeHead(200, {'Content-Type': 'application/javascript'});
-        res.end(data);
-      }
-    });
-  } else if (req.url === '/login.js') {
-    fs.readFile('login.js', 'utf8', (err, data) => {
-      if (err) {
-        res.writeHead(404);
-        res.end('File not found');
-      } else {
-        res.writeHead(200, {'Content-Type': 'application/javascript'});
-        res.end(data);
-      }
-    });
-  } else {
-    res.writeHead(404);
-    res.end('File not found');
-  }
+// Middleware pour servir les fichiers statiques
+app.use(express.static(path.join(__dirname, 'web')));
+
+// Route pour le fichier login.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'web', 'login.html'));
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`)})
+// Route pour le fichier index.html
+app.get('/index', (req, res) => {
+  res.sendFile(path.join(__dirname, 'web', 'index.html'));
+});
+
+// Démarrage du serveur
+app.listen(PORT, () => {
+  console.log(`Server is running on  http://localhost:${PORT}`);
+});
