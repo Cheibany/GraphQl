@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Responsive Dashboard Design #1 | AsmrProg</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar Section -->
+        <aside>
+          <div class="toggle">
+              <div class="logo">
+                  <img src="img/graphQl.svg">
+              </div>
+          </div>
+          <!-- Add user-info card here -->
+          <div class="user-info" id="user-info">
+              <div class="e-card playing">
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="wave"></div>
+                  <div class="infotop">
+                      <span id="githubLogin"></span>
+                      <span id="FirstName"></span>
+                      <span id="LastName"></span>
+                      <span id="createdAt"></span>
+                      <span id="email"></span>
+                      <span id="age"></span>
+                      <span id="nationality"></span>
+                      <span id="phone"></span>
+                  </div>
+              </div>
+          </div>
+          <div class="close" id="close-btn" style="display: none;">
+            <span class="material-icons-sharp">
+                close
+            </span>
+        </div>
+      </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <h1>Analytics</h1>
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="xp-amount">
+                    <div class="xp-title">
+                        <h3>Total XP</h3>
+                    </div>
+                    <div class="xp-score"><p>000XP</p></div>
+                    <div class="xp-icone"><img src="img/xp.png" alt="XP Icon"></div>
+                </div>
+
+                <div class="grades">
+                    <div class="grades-title">
+                      <h3>Grades</h3>
+                    </div>
+                    <div class="grades-score">
+                      <p>00</p>
+                    </div>
+                    <div class="grades-icon">
+                      <img src="img/grade.png" alt="Grades Icon">
+                    </div>
+                  </div>
+                
+                  <div class="audits">
+                    <div class="audits-title">
+                      <h3>Audits</h3>
+                    </div>
+                    <div class="audits-score">
+                      <p>10.9</p>
+                    </div>
+                    <div class="audits-icon">
+                      <img src="img/audit.png" alt="Audits Icon">
+                    </div>
+                  </div>
+                
+                  <div class="project">
+                    <div class="project-title">
+                      <h3>Total-Project</h3>
+                    </div>
+                    <div class="project-score">
+                      <p>00</p>
+                    </div>
+                    <div class="project-icon">
+                      <img src="img/projet.png" alt="Project Icon">
+                    </div>
+                  </div>
+            </div>
+            <!-- End of Analyses -->
+
+            <!-- New graph Section -->
+            <div class="Svg">
+                <h2>Graph</h2>
+                <div class="bar-graph" id="bar-graph">
+                </div>
+                <div class="round-graph">
+                </div>
+            </div>
+            <!-- End of graph Section -->
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+              <button id="menu-btn">
+                <span class="material-icons-sharp">
+                    menu
+                </span>
+            </button>
+              <button class="Btn">
+  
+                <div class="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+                
+                <div class="text">Logout</div>
+              </button>
+            
+
+                <div class="profile">
+                    <div class="info" style="display: flex;align-items: center;">
+                      <p class="username-text">Hey, <b>Username</b></p>
+                    </div>
+                    <div class="profile-photo">
+                        <img id="profile-photo" src="">
+                    </div>
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+            <div class="user-profile">
+                <div class="logo">
+                  <div class="skills-logo"><img src="img/Skills.png" alt="skills-logo"></div>
+                  <h2>Skills</h2>
+                  <div class="radar-graph">
+                    <canvas id="skillsRadarChart"></canvas>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
