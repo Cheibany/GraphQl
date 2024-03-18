@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 8080;
 // Middleware pour servir les fichiers statiques
 app.use(express.static(path.join(__dirname, 'web')));
 
-// Route pour le fichier login.html
+// Route pour le fichie r login.html
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'web', 'login.html'));
 });

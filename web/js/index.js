@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const apiUrl = 'https://api.dicebear.com/8.x/bottts/svg';
     const seed = Math.floor(Math.random() * 10000); // Génère un seed aléatoire
   
-    profilePhoto.src = `${apiUrl}?seed=${seed}?scale=150`;
+    profilePhoto.src = `${apiUrl}?seed=${seed}?size=100`;
 });
 
 /*******************Comportement ui*************/
@@ -262,3 +262,5 @@ checkJwt();
 // Vérifier le JWT toutes les 5 minutes
 setInterval(checkJwt, 1000);
 /**********Function checking localSTorage End***********************/
+
+// cisall
